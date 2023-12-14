@@ -49,6 +49,7 @@ public class DriveLocomotion : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("ONENABLE : ");
         turn = GameManager.InputManager.inputActions.Drive.Turn;
         turn.Enable();
 

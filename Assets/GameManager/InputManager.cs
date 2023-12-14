@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     private void Awake()
     {
         inputActions = new ProjectName();
+        Debug.Log("AWAKE : ");
     }
 
     void Start()
