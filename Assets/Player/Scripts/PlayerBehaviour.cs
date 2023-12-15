@@ -10,9 +10,9 @@ public class PlayerBehaviour : MonoBehaviour
     InputAction turn, brakePedal, accelerate, test;
     CharacterController characterController;
 
-    public float maxSpeed = 10f;
+    public float maxSpeed = 20f;
     float speed = 0f;
-    float accelerationMultiplier = 0.2f;
+    float accelerationMultiplier = 0.4f;
     float defaultDrag = 0.01f;
     float brakeDrag = 0.02f;
     float drag = 0.15f;
@@ -34,7 +34,6 @@ public class PlayerBehaviour : MonoBehaviour
         inputActions.Drive.Turn.Enable();
         inputActions.Drive.BrakePedal.Enable();
         inputActions.Drive.Accelerate.Enable();
-/*        inputActions.Drive.Test.Enable();*/
     }
 
     void FixedUpdate()
@@ -43,7 +42,6 @@ public class PlayerBehaviour : MonoBehaviour
         Debug.Log("Accelerate: " + accelerate.ReadValue<float>());
         Debug.Log("Brake: " + brakePedal.ReadValue<float>());
 
-       /* Debug.Log("TEST: " + test.ReadValue<float>());*/
 
         Locomotion();
     }
@@ -59,8 +57,6 @@ public class PlayerBehaviour : MonoBehaviour
         brakePedal = inputActions.Drive.BrakePedal;
         brakePedal.Enable();
 
-/*        test = inputActions.Drive.Test;
-        test.Enable();*/
     }
 
     private void OnDisable()
